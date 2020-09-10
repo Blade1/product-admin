@@ -1,1 +1,5 @@
 <div> product form </div>
+<div *ngIf="product | async as p">
+	<p>{{p.id}}</p>
+	<p>{{p.name.en}} | {{p.name.uk}}</p>
+</div>
