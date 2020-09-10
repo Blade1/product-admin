@@ -10,10 +10,12 @@ import { CategoryListComponent } from './category/category-list/category-list.co
 
 import { AppRoutingModule } from './app-routing.module';
 import { Router } from '@angular/router';
+import { ProductFormComponent } from './product/product-form/product-form.component';
+import { SelectProductMessageComponent } from './product/select-product-message/select-product-message.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, AppRoutingModule],
-  declarations: [ AppComponent, ProductListComponent, PageNotFoundComponent, CategoryListComponent ],
+  declarations: [ AppComponent, ProductListComponent, PageNotFoundComponent, CategoryListComponent, ProductFormComponent, SelectProductMessageComponent ],
   bootstrap:    [ AppComponent ],
   providers: [ProductService]
 })
