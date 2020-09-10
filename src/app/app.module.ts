@@ -12,10 +12,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { Router } from '@angular/router';
 import { ProductFormComponent } from './product/product-form/product-form.component';
 import { SelectProductMessageComponent } from './product/select-product-message/select-product-message.component';
+import { ProductModule } from './product/product.module';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, AppRoutingModule],
-  declarations: [ AppComponent, ProductListComponent, PageNotFoundComponent, CategoryListComponent, ProductFormComponent, SelectProductMessageComponent ],
+  declarations: [ AppComponent, ProductListComponent, PageNotFoundComponent, CategoryListComponent, ProductFormComponent, SelectProductMessageComponent, ProductModule ],
   bootstrap:    [ AppComponent ],
   providers: [ProductService]
 })
