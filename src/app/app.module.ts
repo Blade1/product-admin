@@ -8,10 +8,15 @@ import { ProductService } from './product/product.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CategoryListComponent } from './category/category-list/category-list.component';
 
+import { AppRoutingModule } from './app-routing.module';
+import { Router } from '@angular/router';
+
 @NgModule({
-  imports:      [ BrowserModule, FormsModule ],
+  imports:      [ BrowserModule, FormsModule, AppRoutingModule],
   declarations: [ AppComponent, ProductListComponent, PageNotFoundComponent, CategoryListComponent ],
   bootstrap:    [ AppComponent ],
   providers: [ProductService]
 })
-export class AppModule { }
+export class AppModule {
+    constructor(router: Router) { }
+ }

@@ -8,7 +8,7 @@ import { CategoryListComponent } from "./category/category-list/category-list.co
 const appRoutes: Routes = [
   { path: "admin/categories", component: CategoryListComponent },
   { path: "admin/products", component: ProductListComponent },
-  { path: "", redirectTo: "/superheroes", pathMatch: "full" },
+  { path: "", redirectTo: "/admin/categories", pathMatch: "full" },
   { path: "**", component: PageNotFoundComponent }
 ];
 
