@@ -77,8 +77,8 @@ export class ProductFormComponent implements OnInit {
   }
 
   initArrayForm(array: FormArray, n) {
-    array.clear(); 
-    for(let i in n) {
+    array.clear();
+    for (let i = 0; i < n; i++) {
       array.push(this.fb.control(""));
     }
   }
@@ -93,6 +93,14 @@ export class ProductFormComponent implements OnInit {
 
   addImage() {
     this.images.push(this.fb.control(""));
+  }
+  
+  deleteImage(i) {
+    this.images.controls.splice(i, 1);
+  }
+
+  addCategory() {
+    this.categories.push(this.fb.control(""));
   }
 
   onSubmit() {

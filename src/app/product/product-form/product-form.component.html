@@ -2,8 +2,8 @@
 <div *ngIf="product | async as p">
 	<p>{{p.id}}</p>
 	<p>{{p.name.en}} | {{p.name.uk}}</p>
-  <p>images</p>
-  <p *ngFor="let i of p.images">{{i}}</p>
+	<!-- <p>images</p>
+  <p *ngFor="let i of p.images">{{i}}</p> -->
 </div>
 
 <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
@@ -13,30 +13,42 @@
     uk <input type="text" formControlName="uk" required>
   </div>
 
-	<span class="field-separator"></span>
-	<label>description</label>
-	<div formGroupName="description">
-		en <textarea type="text" formControlName="en" required></textarea>
-    uk <textarea type="text" formControlName="uk" required></textarea>
-  </div>
+		<span class="field-separator"></span>
+		<label>description</label>
+		<div formGroupName="description">
+			en <textarea type="text" formControlName="en" required></textarea>
+			uk <textarea type="text" formControlName="uk" required></textarea>
+		</div>
 
-	<span class="field-separator"></span>
-	<label>price</label>
-  <input type="text" formControlName="price">
+		<span class="field-separator"></span>
+		<label>price</label>
+		<input type="text" formControlName="price">
 
-	<span class="field-separator"></span>
-	<label>thumbnail</label>
-  <input type="text" formControlName="thumbnail">
+		<span class="field-separator"></span>
+		<label>thumbnail</label>
+		<input type="text" formControlName="thumbnail">
 
-	<span class="field-separator"></span>
-  <div formArrayName="images">
-    <h3>images</h3> <button (click)="addImage()">Add Image</button>
-    <div *ngFor="let image of images.controls; let i=index">
-      <label>
+		<span class="field-separator"></span>
+		<div formArrayName="categories">
+			<h3>images</h3> <button (click)="addCategory()">Add Category</button>
+			<div *ngFor="let category of categories.controls; let i=index">
+				<label>
         image:
         <input type="text" [formControlName]="i">
       </label>
-    </div>
-  </div>
+			</div>
+		</div>
 
+		<span class="field-separator"></span>
+		<div formArrayName="images">
+			<h3>images</h3> <button (click)="addImage()">Add Image</button>
+			<div *ngFor="let image of images.controls; let i=index">
+        <img src="https://tsomko.com/img/products/{{image.value}}" alt="select"/>
+        
+				<input type="text" [formControlName]="i">
+        <button (click)="deleteImage(i)">Remove</button>
+    </div>
+			</div>
+
+			<button type="submit" [disabled]="!productForm.valid">Submit</button>
 </form>
