@@ -1,0 +1,22 @@
+.field-separator {
+  display: block;
+  width: 85%;
+  height: 2px;
+  background: rgb(190, 190, 190);
+  border-radius: 1px;
+  margin: 5px 0px;
+}
+
+input {
+  margin: 3px 15px 3px 5px;
+}
+
+textarea {
+  min-height: 4.3em;
+  min-width: 200px;
+  vertical-align: middle;
+  margin-top: 3px;
+}
+label {
+  font-weight: bold;
+}

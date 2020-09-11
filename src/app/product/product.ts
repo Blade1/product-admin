@@ -1,5 +1,6 @@
 import { LangString } from '../langString';
 import { Spec } from './spec';
+import { Sku } from './sku';
 
 export interface Product {
   id: string;
@@ -10,4 +11,5 @@ export interface Product {
   images: string[];
   categories: string[];
   specs: Spec[];
+  skus: Sku[];
 }
